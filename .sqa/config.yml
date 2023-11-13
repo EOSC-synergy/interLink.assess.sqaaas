@@ -5,7 +5,7 @@ config:
       branch: release/1.8.0
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/interTwin-eu/interLink:
-      branch: main
+      branch: v0.0.1
       repo: https://github.com/interTwin-eu/interLink
 environment:
   JPL_DOCKERFORCEBUILD: enabled
@@ -15,66 +15,66 @@ sqa_criteria:
     repos:
       github.com/interTwin-eu/interLink git:
         commands:
-        - /usr/bin/env sh .sqa/script.frumpy-taupe-duck.sh
-        container: qc.acc_geeky-tan-dolphin
+        - /usr/bin/env sh .sqa/script.hilly-chocolate-russel.sh
+        container: qc.acc_breezy-jade-uakari
   QC.Doc:
     repos:
       github.com/interTwin-eu/interLink find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.muggy-myrtle-chimpanzee.sh
-        container: qc.doc_hazy-indigo-angora
+        - /usr/bin/env sh .sqa/script.thirsty-orchid-forest.sh
+        container: qc.doc_skanky-coral-booby
       github.com/interTwin-eu/interLink git:
         commands:
-        - /usr/bin/env sh .sqa/script.foggy-lavender-markhor.sh
-        container: qc.doc_pretty-mustard-deer
+        - /usr/bin/env sh .sqa/script.snoopy-firebrick-pig.sh
+        container: qc.doc_snippy-grey-indri
       github.com/interTwin-eu/interLink markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.foggy-amber-serval.sh
-        container: qc.doc_whiny-cinnabar-shark
+        - /usr/bin/env sh .sqa/script.snazzy-periwinkle-gopher.sh
+        container: qc.doc_nerdy-jade-rhinoceros
   QC.Lic:
     repos:
       github.com/interTwin-eu/interLink licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.greasy-fuchsia-hound.sh
-        container: qc.lic_queasy-black-rat
+        - /usr/bin/env sh .sqa/script.foggy-razzmatazz-meerkat.sh
+        container: qc.lic_foggy-grey-lobster
   QC.Sec:
     repos:
       github.com/interTwin-eu/interLink bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.chummy-plum-tzu.sh
-        container: qc.sec_bluesy-myrtle-hedgehog
+        - /usr/bin/env sh .sqa/script.randy-bistre-shrew.sh
+        container: qc.sec_muggy-chocolate-sloth
       github.com/interTwin-eu/interLink gosec:
         commands:
-        - /usr/bin/env sh .sqa/script.grumpy-auburn-jaguar.sh
-        container: qc.sec_woozy-mauve-turtle
+        - /usr/bin/env sh .sqa/script.smelly-blue-cuscus.sh
+        container: qc.sec_nerdy-black-mongoose
   QC.Sty:
     repos:
       github.com/interTwin-eu/interLink flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.geeky-taupe-robin.sh
-        container: qc.sty_gloppy-scarlet-spider
+        - /usr/bin/env sh .sqa/script.slimy-russet-millipede.sh
+        container: qc.sty_cozy-peach-abyssinian
       github.com/interTwin-eu/interLink hadolint:
         commands:
-        - /usr/bin/env sh .sqa/script.woolly-beige-pig.sh
-        container: qc.sty_sleepy-lavender-saola
+        - /usr/bin/env sh .sqa/script.wiggy-blue-gorilla.sh
+        container: qc.sty_droopy-azure-liger
       github.com/interTwin-eu/interLink jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.shaggy-dandelion-guppy.sh
-        container: qc.sty_sleepy-gold-peccary
+        - /usr/bin/env sh .sqa/script.homely-wisteria-affenpinscher.sh
+        container: qc.sty_wheezy-lime-foxhound
       github.com/interTwin-eu/interLink staticcheck:
         commands:
-        - /usr/bin/env sh .sqa/script.shaggy-tomato-bullfrog.sh
-        container: qc.sty_baggy-lilac-lynx
+        - /usr/bin/env sh .sqa/script.hilly-coral-kiwi.sh
+        container: qc.sty_flabby-rose-hippopotamus
   QC.Uni:
     repos:
       github.com/interTwin-eu/interLink pytest:
         commands:
-        - /usr/bin/env sh .sqa/script.tacky-lemon-retriever.sh
-        container: qc.uni_skimpy-tangerine-antelope
+        - /usr/bin/env sh .sqa/script.snappy-periwinkle-wrasse.sh
+        container: qc.uni_cloudy-vermilion-cichlid
   QC.Ver:
     repos:
       github.com/interTwin-eu/interLink get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.dorky-ochre-forest.sh
-        container: qc.ver_crabby-amber-dachsbracke
+        - /usr/bin/env sh .sqa/script.skinny-grey-bee.sh
+        container: qc.ver_bluesy-linen-snail
 timeout: 5400

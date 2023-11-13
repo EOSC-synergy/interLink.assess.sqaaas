@@ -4,5 +4,5 @@
 
 (
 cd github.com/interTwin-eu/interLink &&
-    hadolint docker/slurm/Dockerfile --failure-threshold error
+    hadolint vendor/golang.org/x/net/http2/Dockerfile vendor/github.com/CARV-ICS-FORTH/knoc/Dockerfile --failure-threshold error
 )
