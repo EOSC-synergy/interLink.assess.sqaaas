@@ -1,0 +1,80 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.8.0
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/interTwin-eu/interLink:
+      branch: main
+      repo: https://github.com/interTwin-eu/interLink
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/interTwin-eu/interLink git:
+        commands:
+        - /usr/bin/env sh .sqa/script.frumpy-taupe-duck.sh
+        container: qc.acc_geeky-tan-dolphin
+  QC.Doc:
+    repos:
+      github.com/interTwin-eu/interLink find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.muggy-myrtle-chimpanzee.sh
+        container: qc.doc_hazy-indigo-angora
+      github.com/interTwin-eu/interLink git:
+        commands:
+        - /usr/bin/env sh .sqa/script.foggy-lavender-markhor.sh
+        container: qc.doc_pretty-mustard-deer
+      github.com/interTwin-eu/interLink markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.foggy-amber-serval.sh
+        container: qc.doc_whiny-cinnabar-shark
+  QC.Lic:
+    repos:
+      github.com/interTwin-eu/interLink licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.greasy-fuchsia-hound.sh
+        container: qc.lic_queasy-black-rat
+  QC.Sec:
+    repos:
+      github.com/interTwin-eu/interLink bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.chummy-plum-tzu.sh
+        container: qc.sec_bluesy-myrtle-hedgehog
+      github.com/interTwin-eu/interLink gosec:
+        commands:
+        - /usr/bin/env sh .sqa/script.grumpy-auburn-jaguar.sh
+        container: qc.sec_woozy-mauve-turtle
+  QC.Sty:
+    repos:
+      github.com/interTwin-eu/interLink flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.geeky-taupe-robin.sh
+        container: qc.sty_gloppy-scarlet-spider
+      github.com/interTwin-eu/interLink hadolint:
+        commands:
+        - /usr/bin/env sh .sqa/script.woolly-beige-pig.sh
+        container: qc.sty_sleepy-lavender-saola
+      github.com/interTwin-eu/interLink jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.shaggy-dandelion-guppy.sh
+        container: qc.sty_sleepy-gold-peccary
+      github.com/interTwin-eu/interLink staticcheck:
+        commands:
+        - /usr/bin/env sh .sqa/script.shaggy-tomato-bullfrog.sh
+        container: qc.sty_baggy-lilac-lynx
+  QC.Uni:
+    repos:
+      github.com/interTwin-eu/interLink pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.tacky-lemon-retriever.sh
+        container: qc.uni_skimpy-tangerine-antelope
+  QC.Ver:
+    repos:
+      github.com/interTwin-eu/interLink get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.dorky-ochre-forest.sh
+        container: qc.ver_crabby-amber-dachsbracke
+timeout: 5400
