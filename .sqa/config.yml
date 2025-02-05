@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/2.0.0
+      branch: main
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/interTwin-eu/interLink:
       branch: main
@@ -15,28 +15,62 @@ sqa_criteria:
     repos:
       github.com/interTwin-eu/interLink git:
         commands:
-        - /usr/bin/env sh .sqa/script.tacky-orchid-warthog.sh
-        container: qc.acc_sleepy-charcoal-squid
+        - /usr/bin/env sh .sqa/script.lousy-eggplant-raccoon.sh
+        container: qc.acc_baggy-myrtle-alligator
   QC.Doc:
     repos:
       github.com/interTwin-eu/interLink find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.tacky-platinum-crocodile.sh
-        container: qc.doc_chummy-corn-hippopotamus
+        - /usr/bin/env sh .sqa/script.sleepy-apricot-tuatara.sh
+        container: qc.doc_shabby-indigo-cow
       github.com/interTwin-eu/interLink git:
         commands:
-        - /usr/bin/env sh .sqa/script.scanty-cerise-salamander.sh
-        container: qc.doc_bluesy-teal-saola
+        - /usr/bin/env sh .sqa/script.lousy-pink-bonobo.sh
+        container: qc.doc_foggy-chocolate-dachsbracke
+      github.com/interTwin-eu/interLink markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.stuffy-gold-zebu.sh
+        container: qc.doc_silly-eggplant-heron
   QC.Lic:
     repos:
       github.com/interTwin-eu/interLink licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.boozy-orange-hornet.sh
-        container: qc.lic_scummy-cinnabar-stoat
+        - /usr/bin/env sh .sqa/script.frumpy-ecru-wolfhound.sh
+        container: qc.lic_freaky-linen-dragonfly
+  QC.Sec:
+    repos:
+      github.com/interTwin-eu/interLink bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.pokey-tomato-gorilla.sh
+        container: qc.sec_hilly-mustard-axolotl
+      github.com/interTwin-eu/interLink gosec:
+        commands:
+        - /usr/bin/env sh .sqa/script.cranky-olivine-sheep.sh
+        container: qc.sec_shaky-periwinkle-gorilla
+  QC.Sty:
+    repos:
+      github.com/interTwin-eu/interLink flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.thirsty-olive-donkey.sh
+        container: qc.sty_wiggy-lavender-bandicoot
+      github.com/interTwin-eu/interLink jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.smelly-olivine-collie.sh
+        container: qc.sty_hazy-buff-angelfish
+      github.com/interTwin-eu/interLink staticcheck:
+        commands:
+        - /usr/bin/env sh .sqa/script.craggy-red-llama.sh
+        container: qc.sty_droopy-malachite-donkey
+  QC.Uni:
+    repos:
+      github.com/interTwin-eu/interLink pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.zippy-emerald-newfoundland.sh
+        container: qc.uni_nerdy-buff-emu
   QC.Ver:
     repos:
       github.com/interTwin-eu/interLink get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.wimpy-olivine-bonobo.sh
-        container: qc.ver_queasy-lilac-oyster
+        - /usr/bin/env sh .sqa/script.fuzzy-xanthic-bat.sh
+        container: qc.ver_chummy-charcoal-butterfly
 timeout: 5400
